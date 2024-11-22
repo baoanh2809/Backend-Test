@@ -5,19 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.emailVerifyToken = exports.isUserLoggedInValidator = exports.changePasswordValidator = exports.checkRoleValidator = exports.verifiedUserValidator = exports.resetPasswordValidator = exports.verifyForgotPasswordToken = exports.forgotPasswordValidator = exports.refreshTokenValidator = exports.accessTokenValidator = exports.registerValidator = exports.logginValidate = void 0;
 const express_validator_1 = require("express-validator");
-const validation_1 = require("@/utils/validation");
-const database_services_1 = __importDefault(require("@/services/database.services"));
-const users_services_1 = __importDefault(require("@/services/users.services"));
-const Errors_1 = require("@/models/Errors");
-const messages_1 = require("@/constants/messages");
-const crypto_1 = require("@/utils/crypto");
-const httpStatus_1 = __importDefault(require("@/constants/httpStatus"));
-const jwt_1 = require("@/utils/jwt");
+const validation_1 = require("../utils/validation");
+const database_services_1 = __importDefault(require("../services/database.services"));
+const users_services_1 = __importDefault(require("../services/users.services"));
+const Errors_1 = require("../models/Errors");
+const messages_1 = require("../constants/messages");
+const crypto_1 = require("../utils/crypto");
+const httpStatus_1 = __importDefault(require("../constants/httpStatus"));
+const jwt_1 = require("../utils/jwt");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const lodash_1 = require("lodash");
 const mongodb_1 = require("mongodb");
-const enums_1 = require("@/constants/enums");
-const commons_1 = require("@/utils/commons");
+const enums_1 = require("../constants/enums");
+const commons_1 = require("../utils/commons");
 const passwordSchema = {
     notEmpty: {
         errorMessage: messages_1.USER_MESSAGES.PASSWORD_IS_REQUIRED

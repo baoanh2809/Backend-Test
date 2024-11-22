@@ -2,10 +2,10 @@ import { NextFunction, Request, Response } from 'express'
 import { ParamsDictionary } from 'express-serve-static-core'
 import { TokenPayload } from '@/models/requests/User.requests'
 import articlesService from '@/services/articles.services'
-import { ArticlesParam } from '@/models/requests/Articles.requets'
+import { ArticlesParam } from '@/models/requests/Articles.requests'
 // import arti
 
-export const getNewFeedsController = async (req: Request, res: Response) => {
+export const getNewFeedsController = async (req: Request, res: Response): Promise<any> => {
   const result = await articlesService.getAllArticles()
   return res.json({
     message: 'get new feeds successfully',
@@ -13,7 +13,7 @@ export const getNewFeedsController = async (req: Request, res: Response) => {
   })
 }
 
-export const createArticleController = async (req: Request, res: Response) => {
+export const createArticleController = async (req: Request, res: Response): Promise<any> => {
   const { user_id } = req.decoded_authorization as TokenPayload
   const { content } = req.body
   const result = await articlesService.createArticle({
@@ -29,7 +29,7 @@ export const createArticleController = async (req: Request, res: Response) => {
 export const getArticleByIdController = async (
   req: Request<ParamsDictionary, any, any, ArticlesParam>,
   res: Response
-) => {
+): Promise<any> => {
   const { article_id } = req.params
   const result = await articlesService.getArticleById(article_id)
   return res.json({
@@ -41,7 +41,7 @@ export const getArticleByIdController = async (
 export const updateArticleController = async (
   req: Request<ParamsDictionary, any, any, ArticlesParam>,
   res: Response
-) => {
+): Promise<any> => {
   const { article_id } = req.params
   const { content } = req.body
   const result = await articlesService.updateArticle(article_id, content)
@@ -52,9 +52,9 @@ export const updateArticleController = async (
 }
 
 export const deleteArticleController = async (
-  req: Request<ParamsDictionary, any, any, { article_id: string }>,
+  req: Request<ParamsDictionary, any, any, ArticlesParam>,
   res: Response
-) => {
+): Promise<any> => {
   const { article_id } = req.params
   const result = await articlesService.deleteArticle(article_id)
   return res.json({ message: result.message, result })

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteArticleController = exports.updateArticleController = exports.getArticleByIdController = exports.createArticleController = exports.getNewFeedsController = void 0;
-const articles_services_1 = __importDefault(require("@/services/articles.services"));
+const articles_services_1 = __importDefault(require("../services/articles.services"));
 // import arti
 const getNewFeedsController = async (req, res) => {
     const result = await articles_services_1.default.getAllArticles();

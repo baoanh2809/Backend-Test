@@ -22,7 +22,7 @@ import { ObjectId } from 'mongodb'
 import { USER_MESSAGES } from '@/constants/messages'
 import HTTP from '@/constants/httpStatus'
 
-export const loginController = async (req: Request<ParamsDictionary, any, LoginRequest>, res: Response) => {
+export const loginController = async (req: Request<ParamsDictionary, any, LoginRequest>, res: Response): Promise<any> => {
   const user = req.user as User
   const user_id = user._id as ObjectId
   const result = await userService.login({ user_id: user_id.toString(), verify: user.verify })
@@ -48,7 +48,7 @@ export const forgotPasswordController = async (
   req: Request<ParamsDictionary, any, forgotPassword>,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   const { _id, verify } = req.user as User
   const result = await userService.forgotPassword({ user_id: (_id as ObjectId).toString(), verify })
   return res.status(201).json({ message: USER_MESSAGES.CHECK_EMAIL_FORGOT_PASSWORD, result })
@@ -58,7 +58,7 @@ export const verifyForgotPasswordController = async (
   req: Request<ParamsDictionary, any, verifyForgotPassword>,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   return res.json({
     message: USER_MESSAGES.FORGOT_PASSWORD_VERIFIED_SUCCESS
   })
@@ -68,7 +68,7 @@ export const resetPasswordController = async (
   req: Request<ParamsDictionary, any, resetPassword>,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   const { user_id } = req.decoded_forgot_password_token as TokenPayload
   const password = req.body.password
   const result = await userService.resetPassword(user_id, password)
@@ -109,7 +109,7 @@ export const refreshTokenController = async (
   })
 }
 
-export const verifyEmailController = async (req: Request<ParamsDictionary, any, emailVerifyToken>, res: Response) => {
+export const verifyEmailController = async (req: Request<ParamsDictionary, any, emailVerifyToken>, res: Response): Promise<any> => {
   const { user_id } = req.decoded_email_veridy_token as TokenPayload
   const user = await databaseService.users.findOne({
     _id: new ObjectId(user_id)

@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntityError = exports.ErrorsWithStatus = void 0;
-const httpStatus_1 = __importDefault(require("@/constants/httpStatus"));
-const messages_1 = require("@/constants/messages");
+const httpStatus_1 = __importDefault(require("../constants/httpStatus"));
+const messages_1 = require("../constants/messages");
 class ErrorsWithStatus {
     message;
     status;

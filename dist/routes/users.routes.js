@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const users_middlewares_1 = require("@/middlewares/users.middlewares");
-const handlers_1 = require("@/utils/handlers");
-const users_controllers_1 = require("@/controllers/users.controllers");
+const users_middlewares_1 = require("../middlewares/users.middlewares");
+const handlers_1 = require("../utils/handlers");
+const users_controllers_1 = require("../controllers/users.controllers");
 const usersRouter = (0, express_1.Router)();
 usersRouter.get('/test', (req, res) => {
     res.json({ message: 'Test router' });

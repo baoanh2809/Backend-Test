@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongodb_1 = require("mongodb");
-const config_1 = require("@/constants/config");
+const config_1 = require("../constants/config");
 const uri = `mongodb+srv://${config_1.envConfig.dbUserName}:${config_1.envConfig.dbPassword}@cluster0.brqve.mongodb.net/`;
 class DatabaseService {
     client;

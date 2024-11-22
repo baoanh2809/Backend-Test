@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyAccessToken = exports.numberEnumToArray = void 0;
-const messages_1 = require("@/constants/messages");
-const Errors_1 = require("@/models/Errors");
-const httpStatus_1 = __importDefault(require("@/constants/httpStatus"));
-const jwt_1 = require("@/utils/jwt");
+const messages_1 = require("../constants/messages");
+const Errors_1 = require("../models/Errors");
+const httpStatus_1 = __importDefault(require("../constants/httpStatus"));
+const jwt_1 = require("../utils/jwt");
 const lodash_1 = require("lodash");
 const numberEnumToArray = (numberEnum) => {
     return Object.values(numberEnum).filter((value) => typeof value === 'number');

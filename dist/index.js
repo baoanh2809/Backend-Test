@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const index_routes_1 = require("./routes/index.routes");
 const body_parser_1 = __importDefault(require("body-parser"));
-const database_services_1 = __importDefault(require("@/services/database.services"));
+const database_services_1 = __importDefault(require("./services/database.services"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const app = (0, express_1.default)();
-const port = 3000;
+const port = 4000;
 const swaggerOptions = {
     swaggerDefinition: {
         openapi: '3.0.0',

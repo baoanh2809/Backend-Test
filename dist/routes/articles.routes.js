@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const enums_1 = require("@/constants/enums");
-const articles_controllers_1 = require("@/controllers/articles.controllers");
-const users_middlewares_1 = require("@/middlewares/users.middlewares");
-const handlers_1 = require("@/utils/handlers");
+const enums_1 = require("../constants/enums");
+const articles_controllers_1 = require("../controllers/articles.controllers");
+const users_middlewares_1 = require("../middlewares/users.middlewares");
+const handlers_1 = require("../utils/handlers");
 const express_1 = require("express");
 const articlesRouter = (0, express_1.Router)();
 articlesRouter.get('/test', (req, res) => {

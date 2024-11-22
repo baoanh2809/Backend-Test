@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const enums_1 = require("@/constants/enums");
+const enums_1 = require("../../constants/enums");
 class User {
     _id;
     name;

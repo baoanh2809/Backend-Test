@@ -54,6 +54,7 @@ usersRouter.get('/test', (req, res) => {
  *        "422":
  *          description: Invalid input
  */
+
 usersRouter.post('/register', registerValidator, wrapRequestHandler(registerController))
 /**
  * @swagger

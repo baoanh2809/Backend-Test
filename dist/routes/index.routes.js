@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.routes = routes;
 const express_1 = require("express");
-const paths_1 = __importDefault(require("@/constants/paths"));
+const paths_1 = __importDefault(require("../constants/paths"));
 function routes(app) {
     const apiV1Router = (0, express_1.Router)();
     apiV1Router.use(paths_1.default.user.root, paths_1.default.user.routes);

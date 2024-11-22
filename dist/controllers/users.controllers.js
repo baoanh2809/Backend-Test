@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyEmailController = exports.refreshTokenController = exports.changePasswordController = exports.getMeController = exports.resetPasswordController = exports.verifyForgotPasswordController = exports.forgotPasswordController = exports.logoutController = exports.registerController = exports.loginController = void 0;
-const database_services_1 = __importDefault(require("@/services/database.services"));
-const users_services_1 = __importDefault(require("@/services/users.services"));
+const database_services_1 = __importDefault(require("../services/database.services"));
+const users_services_1 = __importDefault(require("../services/users.services"));
 const mongodb_1 = require("mongodb");
-const messages_1 = require("@/constants/messages");
-const httpStatus_1 = __importDefault(require("@/constants/httpStatus"));
+const messages_1 = require("../constants/messages");
+const httpStatus_1 = __importDefault(require("../constants/httpStatus"));
 const loginController = async (req, res) => {
     const user = req.user;
     const user_id = user._id;

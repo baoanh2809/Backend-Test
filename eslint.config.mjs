@@ -15,8 +15,8 @@ export default [
       prettier: eslintPluginPrettier
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-explicit-any': 'any',
+      '@typescript-eslint/no-unused-vars': 'any',
       'prettier/prettier': [
         'warn',
         {
@@ -35,64 +35,3 @@ export default [
     ignores: ['**/node_modules/', '**/dist/']
   }
 ]
-*        responses:
- *          '200':
- *            description: Delete Articles successfully
- *            content:
- *              application/json:
- *                schema:
- *                  type: object
- *                  properties:
- *                    message:
- *                    type: string
- *                      example: 'Delete Articles successfully'
- *          '403':
- *            description: Forbidden - Only Admins can delete articles
- *            content:
- *              application/json:
- *              schema:
- *                type: object
- *                properties:
- *              message:
- *                type: string
- *                example: "User not authorized"
- *      patch:
- *        tags:
- *          - Articles
- *        summary: Update Article
- *        description: Update Article
- *        security:
- *          - BearerAuth: []
- *        parameters:
- *          - in: path
- *            name: article_id
- *            required: true
- *            description: ID of the article that needs to be updated
- *        schema:
- *          type: object
- *          properties:
- *            article_id:
- *              type: string
- *              format: MongoID
- *              example: '65fada2481786c414cb45039'
- *          requestBody:
- *            required: true
- *            content:
- *              application/json:
- *              schema:
- *                type: object
- *                properties:
- *                  content:
- *                    type: string
- *                    example: 'This is a Articles'
- *        responses:
- *          '200':
- *            description: Update Articles successfully
- *            content:
- *              application/json:
- *              schema:
- *                type: object
- *                properties:
- *                  message:
- *                    type: string
- *                    example: 'Update Articles successfully'

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const database_services_1 = __importDefault(require("@/services/database.services"));
+const database_services_1 = __importDefault(require("../services/database.services"));
 const mongodb_1 = require("mongodb");
 class ArticlesService {
     async getArticleById(id) {
