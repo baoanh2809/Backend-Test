@@ -11,4 +11,5 @@ Runcode with Docker
 Link Docker: https://hub.docker.com/r/adriantran2809/be-test
 
 docker build --progress=plain -t baoanh/nodejs:v4 -f DockerFile.dev .
+
 docker container run -dp 4000:4000 baoanh/nodejs:v4
